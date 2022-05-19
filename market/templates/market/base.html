@@ -1,120 +1,141 @@
 <!DOCTYPE html>
 {% load static tailwind_tags %}
 
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 	<head>
-      <script type="text/javascript" src="{% static 'market/js/scripts.js' %}"></script>
-    <title>Django Tailwind</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Type some info" />
+		<meta name="author" content="Type name" />
 		{% tailwind_css %}
+		<title>Grandmarket Ja</title>
+
+		<!-- Tailwind css -->
+		<link href="css/tailwind.min.css" rel="stylesheet" />
+
+		<!-- Font awesome 5 -->
+		<link href="{% static 'market/fonts/fontawesome/css/all.min.css' %}"  rel="stylesheet" />
+
+		<script>
+			function open(){
+			  document.getElementById('menu').classList.remove('hidden');
+			}
+			function hide(){
+			  document.getElementById('sidebar').classList.add('-left-full');
+			  document.getElementById('backdrop').classList.add('hidden');
+			}
+		</script>
 	</head>
-            <!---->
-	<nav class="bg-white border-green-500 px-2 sm:px-4 py-5 rounded dark:bg-green-500">
-      <div class="container flex flex-wrap justify-between items-center mx-auto">
-        <a href="#" class="flex items-center">
-            <img src="{% static 'market/images/flag.PNG' %}" class="mr-3 h-6 sm:h-9" alt="" />
-            <span class="self-center text-4xl font-semibold whitespace-nowrap dark:text-black">Grandmarket Ja</span>
-        </a>
-        <button type="button" class="inline-flex items-center p-2 ml-3 text-sm text-black rounded-lg md:hidden hover:bg-black focus:outline-none focus:ring-2 focus:ring-black dark:text-black dark:hover:bg-black dark:focus:ring-black"
-               onclick="show('.dropdown')" aria-controls="mobile-menu" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg class="bg-yellow-400 w-6 h-6"  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-          <svg class="hidden bg-black w-6 h-6"  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-        </button>
-        <div class="flex  items-center md:order-2 " data-dropdown-toggle="">
-          <div class="dropdown hidden  w-full ml-5 md:block md:w-auto" id="mobile-menu">
-            <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-              <li>
-                <a href="#" class="block py-2 pr-4 pl-3 text-2xl text-black  rounded md:bg-transparent md:text-black md:p-0 dark:text-yellow-400 md:dark:hover:text-yellow-400 dark:hover:bg-gray-700 dark:hover:text-yellow-400" aria-current="page">Home</a>
-              </li>
-              <li>
-                <a href="#" class="block py-2 pr-4 pl-3 text-2xl text-black rounded border-b border-gray-100 hover:bg-gray-50 md:hover:bg-gray-700 md:border-0 md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-yellow-400 dark:hover:bg-gray-700 dark:hover:text-yellow-400 md:dark:hover:bg-bg-gray-700 dark:border-gray-700">About</a>
-              </li>
-              <li>
-                <a href="#" class="block py-2 pr-4 pl-3 text-2xl text-black rounded border-b border-gray-100 hover:bg-gray-50 md:hover:bg-gray-700 md:border-0 md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-yellow-400 dark:hover:bg-gray-700 dark:hover:text-yellow-400 md:dark:hover:bg-bg-gray-700 dark:border-gray-700">Contact</a>
-              </li>
-              <li>
-                <button type="button" class="flex mr-3 text-sm bg-green-500 rounded-full md:mr-0 " id="cart-button" aria-expanded="false" type="button" data-dropdown-toggle="dropdown">
-                    <img src="{% static 'market/images/bag.jpg' %}" class="mr-3 h-12 sm:h-12 rounded-full dark:focus:ring-black dark:focus:border-black" alt="" />
-                </button>
-              </li>
-              <li>
-                <button type="button" class="flex mr-3 text-sm bg-green-500 rounded-full md:mr-0 " id="user-menu-button" aria-expanded="false" type="button" data-dropdown-toggle="dropdown">
-                <span class="sr-only">Open user menu</span>
-                <img class="mr-3 h-12 sm:h-12 rounded-full  dark:focus:ring-black dark:focus:border-black" src="{% static 'market/images/20200501_144715.png' %}" alt="user photo">
-              </button>
-              </li>
-            </ul>
 
 
+            	<!--  COMPONENT: HEADER -->
+	<header class="bg-green-600 py-3 border-b">
+		<div class="container max-w-screen-xl mx-auto px-4">
+			<div class="flex flex-wrap items-center">
+				<!-- Brand -->
+				<div class="flex-shrink-0 mr-5">
+					<a href="{% url 'market:home' %}"> <img src="{% static 'market/images/logo.svg' %}" height="38" alt="Brand" /> </a>
+				</div>
+				<!-- Brand .//end -->
 
+				<!-- Search -->
+				<div class="flex flex-nowrap items-center w-full order-last md:order-none mt-5 md:mt-0 md:w-2/4 lg:w-2/4">
+					<input class="flex-grow appearance-none border border-gray-200 bg-gray-100 rounded-md mr-2 py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400" type="text" placeholder="Search">
+					<button type="button" class="px-4 py-2 inline-block text-white border border-transparent bg-yellow-400 rounded-md hover:bg-blue-700">
+						<i class="fa fa-search"></i>
+					</button>
+				</div>
+				<!-- Search .//end -->
 
+				<!-- Actions -->
+				<div class="flex items-center space-x-2 ml-auto">
+					{% if request.user.is_authenticated %}
+						<a class="px-3 py-2 inline-block text-center text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:border-gray-300" href="{% url 'market:sign-out' %}">
+							<i class="text-gray-400 w-5 fa fa-user"></i>
+							<span class="hidden lg:inline ml-1">Sign out</span>
+						</a>
+					{% else%}
+						<a class="px-3 py-2 inline-block text-center text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:border-gray-300" href="{% url 'market:sign-in' %}">
+							<i class="text-gray-400 w-5 fa fa-user"></i>
+							<span class="hidden lg:inline ml-1">Sign in</span>
+						</a>
+					{% endif %}
 
+					<a class="px-3 py-2 inline-block text-center text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:border-gray-300" href="{% url 'market:store' %}">
+						<i class="text-gray-400 w-5 fa fa-heart"></i>
+						<span class="hidden lg:inline ml-1">My Store</span>
+					</a>
 
-            <!-- Dropdown menu -->
-            <div class="dropdown hidden z-50 my-4 text-base list-none bg-black rounded divide-y divide-gray-100 shadow dark:bg-black dark:divide-gray-600" id="dropdown1">
-              <div class="py-3 px-4">
-                <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
-                <span class="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
-              </div>
-              <ul class="py-1" aria-labelledby="dropdown">
-                <li>
-                  <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
-                </li>
-                <li>
-                  <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
-                </li>
-                <li>
-                  <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
-                </li>
-                <li>
-                  <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--search and categories-->
-      <div>
-        <div class="container flex flex-wrap justify-between items-center mx-auto">
+					<a class="px-3 py-2 inline-block text-center text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:border-gray-300" href="{% url 'market:cart' %}">
+						<i class="text-gray-400 w-5 fa fa-shopping-cart"></i>
+						<span class="hidden lg:inline ml-1">My cart</span>
+					</a>
+					<div class="flex items-center md:order-2">
+					  <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" type="button" data-dropdown-toggle="dropdown">
+						<span class="sr-only">Open user menu</span>
+						<img class="w-8 h-8 rounded-full" src="{% static 'market/images/prof.png' %}" alt="user photo">
+					  </button>
+					  <!-- Dropdown menu -->
+					  <div class="hidden z-50 my-4 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" id="dropdown">
+						<div class="py-3 px-4">
+						  <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
+						  <span class="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+						</div>
+						<ul class="py-1" aria-labelledby="dropdown">
+						  <li>
+							<a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+						  </li>
+						  <li>
+							<a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
+						  </li>
+						  <li>
+							<a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
+						  </li>
+						  <li>
+							<a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+						  </li>
+						</ul>
+					  </div>
+					</div>
+				<!-- Actions .//end -->
 
-          <button id="dropdownDefault" data-dropdown-toggle="dropdown" class="text-black bg-yellow-400 mt-3 mr-4 hover:bg-black focus:ring-4 focus:outline-none focus:ring-black font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center md:dark:hover:text-yellow-400 dark:bg-yellow-400 dark:hover:bg-black dark:focus:ring-green-500" type="button">Categories<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+				<!-- mobile-only -->
+				<div class="lg:hidden ml-2">
+					<button type="button"  class="bg-white p-3 inline-flex items-center rounded-md text-black hover:bg-gray-200 hover:text-gray-800 border border-transparent">
+						<span class="sr-only">Open menu</span>
+						<i class="fa fa-bars fa-lg"></i>
+					</button>
+				</div>
+				<!-- mobile-only //end  -->
 
-          <div id="" class="dropdown z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="top" style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(352px, 4px);">
-          <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
-          <li>
-          <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-          </li>
-          <li>
-          <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-          </li>
-          <li>
-          <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-          </li>
-          <li>
-          <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
-          </li>
-          </ul>
-          </div>
+			</div> <!-- flex grid //end -->
+		</div> <!-- container //end -->
+	</header>
+	<nav class="border-b bg-gray-100">
+		<div class="container max-w-screen-xl mx-auto px-4">
+			<!-- Bottom -->
+			<div id="menu" class="hidden lg:flex flex-1 items-center py-1">
+				<a class="px-3 py-2 rounded-md hover:bg-gray-200" href="{% url 'market:home' %}"> Category </a>
+				<a class="px-3 py-2 rounded-md hover:bg-gray-200" href="{% url 'market:market' %}"> Market </a>
+				<a class="px-3 py-2 rounded-md hover:bg-gray-200" href="{% url 'market:stores' %}"> Stores </a>
+				<a class="px-3 py-2 rounded-md hover:bg-gray-200" href="{% url 'market:favorites' %}"> Favorites </a>
+				<a class="px-3 py-2 rounded-md hover:bg-gray-200" href="{% url 'market:about' %}"> About </a>
+			</div>
+			<!-- Bottom //end -->
+		</div> <!-- container //end -->
+	</nav>
+	<!--  COMPONENT: HEADER //END -->
 
-          <form class="flex-1" id="searchForm" method="GET">
-		    <input type="text" id="email-address-icon" class="block p-3 pl-10 mt-3 w-full text-black bg-white rounded-lg border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-black dark:focus:border-black" placeholder="Search...">
-	      </form>
-        </div>
-      </div>
-    </nav>
-
-
-    <!--cart-->
-    <div></div>
-
-    {% block content %}
+	{% block content %}
 	<!-- Content goes here -->
-    {% endblock content %}
 
+	{% endblock content %}
 
-
+	<script>
+		function myFunction() {
+	   var element = document.getElementById("myDIV");
+	   element.classList.toggle("mystyle");
+	}
+	</script>
+	<script src="https://unpkg.com/flowbite@1.4.5/dist/flowbite.js"></script>
 </html>
