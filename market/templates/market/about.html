@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+
+<body class="bg-green-200">
+
+	{% block content %}
+	{% include 'market/base.html' %}
+
+			<section class="flex flex-row font-serif justify-evenly rounded text-center">
+                <div class="px-8 bg-black text-green-500">
+                    <h1>Why use GrandMarket Ja?</h1>
+                    <p>Because it is a market place designed for both hustlers and entrepreneurs.
+                        We are a social market place meaning we cater for 1 time sells who dont have a business just hustling some good as well as entrepreneurs with stocks of goods or services they want to sell</p>
+
+                </div>
+                <div class="px-8 bg-green-900 text-yellow-500">
+                    <h1>How to use GrandMarket Ja?</h1>
+                    <p>You can scroll through the various stores and see the market for free without signing up but the best experience comes from being a member</p>
+                </div>
+                <div class="px-8 bg-yellow-500 text-black">
+                    <h1>How to use GrandMarket Ja?</h1>
+                    <p></p>
+                </div>
+            </section>
+
+
+
+	{% endblock content %}
+
+
+</body>
+</html>
